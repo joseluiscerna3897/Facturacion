@@ -1,0 +1,33 @@
+﻿@model List<Facturacion.Entity.BusinessEntity.General.BEDocIdentidad>
+@{
+    ViewBag.Title = "ListaTabla";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Documento de Identidad</h2>
+
+<button class="btn btn-success">
+    @Html.ActionLink("Nuevo Documento", "VistaNuevoDocumentoIdentidad","DocIdentidad", new {  Style = "color:white" })
+</button>
+
+<div class="container-fluid">
+    <table class="table">
+        <tr class="btn-primary">
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.pIDDocumento</td>
+                <td>@item.pNameDocumento</td>
+                <td>@Html.ActionLink("Editar", "VistaUPD", new { id = item.pIDDocumento, @class = "btn btn-danger" })</td>
+                <td>@Html.ActionLink("Eliminar", "DeleteDocIdentidad", "DocIdentidad", new { id = item.pIDDocumento, @class = "btn btn-danger" })</td>
+                <td></td>
+            </tr>
+        }
+    </table>
+</div>
+

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "VistaNuevoDocumentoIdentidad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Registro de Nuevo Documento de Identidad</h2>
+
+@using (Html.BeginForm("RegistroDocIdentidad","DocIdentidad",FormMethod.Post))
+{
+    <label for="">Codigo</label>
+    <input type="text" name="txtcodigo"/>
+
+    <label for="">Nombre</label>
+    <input type="text" name="txtnombre" />
+
+    <button class="btn btn-primary" type="submit">Registrar</button>
+   
+}
